@@ -20,7 +20,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @ExtendWith(SpringExtension.class)
 @WebMvcTest(controllers = HelloController.class)
 public class HelloControllerTest {
-    @Autowired
+    @Autowired // 스프링이 관리하는 Bean을 주입 받는다
     private MockMvc mvc;
 
     @Test
@@ -46,6 +46,5 @@ public class HelloControllerTest {
                 .andExpect(jsonPath("$.amount", is(amount)));
 
     }
-
 
 }
